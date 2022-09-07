@@ -12,7 +12,7 @@ header img{
     margin-left: 40px;
 }
 
-.botoes{
+.botoes-inicio{
     
     
     width: 80%;
@@ -24,7 +24,7 @@ header img{
     
 }
 
-.comecar{
+.comecar,.desistir{
     width: 200px;
     padding: 20px 50px;
     background-color: #0A3871;
@@ -39,7 +39,7 @@ header img{
     
     
 }
-.novapalavra{
+.novapalavra,.novojogo{
     width: 200px;
     padding: 20px 50px;
     
@@ -50,8 +50,39 @@ header img{
     margin-left: auto;
     margin-right: auto;
 }
+.forca{
+    margin-top: 5%;
+    
+    width: 100%; 
+    text-align: center;
+    position: relative;
+    margin-left: auto    ;
+    margin-right: auto;
+    background-color: red;
+}
+.forca canvas{
+    width: 50%;
+    
+}
+
+.botoes-jogo{
+    
+    
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1%;
+    text-align: center;
+    
+    
+}
+.novojogo,.desistir{
+    display: inline-block;
+}
 
 
+
+/*footer*/
 .pe{
     padding: 20px 0;
     text-align: center;

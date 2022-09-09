@@ -7,6 +7,7 @@ var palavraConfere='';
 
 
 
+
 //sorteia palavra
 function sorteia(){
     
@@ -35,19 +36,71 @@ function sorteia(){
 
 function desenhaForca(letras){
     
-
+    
     
         pincel.strokeStyle="#0A3871"
 
-    pincel.strokeRect(40,40,1 ,150);
+    pincel.strokeRect(40,40,1 ,200);
     pincel.strokeRect(40,40,100 ,1);
     pincel.strokeRect(140,40,1 ,50);
-    pincel.strokeRect(20,190,40 ,1);
+    pincel.strokeRect(20,240,40 ,1);
 
 
 
 
-    iniciox = 100;
+   desenhaLetras(letras);
+    
+}
+
+function atualizaForca(vida){
+    if(vida > 0){
+
+        pincel.beginPath();
+        pincel.arc(140, 110, 20, 0, 2 * Math.PI);
+        pincel.stroke();
+
+
+        if(vida > 1){
+            pincel.strokeRect(140,130,1 ,80);
+
+
+        
+            if(vida >2){
+                pincel.beginPath()
+                pincel.moveTo(140,150);
+                pincel.lineTo(190,190);
+                pincel.stroke();
+                pincel.closePath();
+
+            
+                if(vida >3){
+                
+                    pincel.beginPath()
+                    pincel.moveTo(140,150);
+                    pincel.lineTo(90,190);
+                    pincel.stroke();
+                    pincel.closePath();
+
+                    if(vida >4){
+                        pincel.beginPath()
+                        pincel.moveTo(140,210);
+                        pincel.lineTo(190,250);
+                        pincel.stroke();
+                        pincel.closePath();
+
+
+                    }
+
+                }
+            }}  
+    }
+
+}
+
+function desenhaLetras(letras){
+    console.log(vidaVitoria)
+    console.log(letras.length)
+    iniciox = 200;
     inicioy = 290;
     var i = 0;
     pincel.font="30px arial";
@@ -68,6 +121,11 @@ function desenhaForca(letras){
     
     i++;
     }
+    if(vidaVitoria == letras.length){
+
+    restart(alert("vc venceu"))
+    }
+    
     
 }
 
@@ -85,6 +143,8 @@ sorteia();
 
 function restart(){
     pincel.clearRect(0, 0, quadro.width, quadro.height);
+    vida = 0;
+    vidaVitoria=0;
     
     sorteia();
 
@@ -107,25 +167,67 @@ function addpalavra(palavra){
 
 
 
-
 document.addEventListener('keydown', (event) => {
+
+
     var palpite = event.key;
 
-    tentativa(palpite)
+    tentativa(palpite,palavraConfere)
 
     
   }, false);
-
+  vida = 0;
+  vidaVitoria= 0;
 
 function tentativa(palpite,palavraConfere){
-    var i = 0;
-    while(i<palavraConfere.length){
-        if(palavraConfere[i]== palpite){
-            
-            
-        }
-        i++;
+    
+    
+    contador = 0;
+    var segredo2 =[];
+    
+    segredo2.length = palavraConfere.length;
 
+    var i =0;
+    
+    while(i < segredo2.length){
+
+       
+    if(palavraConfere[i]==palpite){
+        segredo2[i] = palpite;
+        vidaVitoria++;
+        contador++;
+
+    }else{
+        segredo2[i] =" ";
+        
+        
+        console.log(vida)
     }
+    
+    i++;
+}
+
+    
+
+
+    if(contador==0){
+        vida++;
+        console.log(vida)
+        if(vida<=5){
+            atualizaForca(vida);
+        }
+
+        if(vida ==6){
+            
+            restart(alert(`Vc morreu, a palavra era ${palavraConfere} e o jogo irá recomeçar`));
+
+        }
+    }
+    desenhaLetras(segredo2);
+    return vidaVitoria;
+    
+   
+
+    
 }
 

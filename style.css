@@ -64,7 +64,7 @@ header img{
     
 }
 
-.botoes-jogo{
+.botoes-jogo,.botoes-add{
     
     
     width: 80%;
@@ -77,6 +77,23 @@ header img{
 }
 .novojogo,.desistir{
     display: inline-block;
+}
+
+.add{
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2%;
+    
+    display: block;
+    resize: none;
+font-family: 'Inter';
+background: #E5E5E5;
+border: #E5E5E5;
+font-style: normal;
+
+font-weight: 320;
+font-size: 32px;
+line-height: 100%;
 }
 
 

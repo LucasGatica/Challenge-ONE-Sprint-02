@@ -129,8 +129,11 @@ function desenhaLetras(letras){
     
     
 }
+var desligaChat = false;
 
 function comecar(){
+
+desligaChat = true;
 var botaoInicial = document.querySelector(".botoes-inicio");
 botaoInicial.hidden = true;
 var canvas = document.querySelector("canvas")
@@ -163,6 +166,11 @@ function restart(){
 
 
 function telaaddpalavra(){
+    var botaoInicial = document.querySelector(".botoes-inicio");
+    botaoInicial.hidden = true;
+    
+    var botaoJogo = document.querySelector(".botoes-add")
+    botaoJogo.hidden=false;
 
 }
 
@@ -176,28 +184,24 @@ function addpalavra(palavra){
 
 
 var letrasjausadas=[];
-document.addEventListener('keydown', (event) => {
 
-    
+
+document.addEventListener('keydown', (event) => {
     var palpite = event.key;
     var dentro = false;
     var i = 0;
-    
-
     while(i< letrasjausadas.length){
-    if(palpite == letrasjausadas[i]){
+    if(palpite == letrasjausadas[i] && desligaChat){
         dentro=true;
         alert(`vc já chutou ${palpite}, tente outra palavra`)
-
     }
     i++
     }
     if(dentro==false){
         tentativa(palpite,palavraConfere)
-    }
-
-    
+    } 
   }, false);
+
   vida = 0;
   vidaVitoria= 0;
 
@@ -255,11 +259,17 @@ function tentativa(palpite,palavraConfere){
 }
 
 function parar(){
+
+    desligaChat = false;
+
     var botaoInicial = document.querySelector(".botoes-inicio");
     botaoInicial.hidden = false;
     var canvas = document.querySelector("canvas")
     canvas.hidden =true;
     var botaoJogo = document.querySelector(".botoes-jogo")
     botaoJogo.hidden=true;
+
+    var botaoInicial = document.querySelector(".botoes-add");
+    botaoInicial.hidden = true;
 
 }

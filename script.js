@@ -11,6 +11,7 @@ var palavraConfere='';
 //sorteia palavra
 function sorteia(){
     
+    
 
     
     var sorteio = Math.floor(Math.random() * palavras.length);
@@ -136,6 +137,11 @@ var canvas = document.querySelector("canvas")
 canvas.hidden =false;
 var botaoJogo = document.querySelector(".botoes-jogo")
 botaoJogo.hidden=false;
+letrasjausadas=[];
+
+    pincel.clearRect(0, 0, quadro.width, quadro.height);
+    vida = 0;
+    vidaVitoria=0;
 
 sorteia();
 
@@ -248,3 +254,12 @@ function tentativa(palpite,palavraConfere){
     
 }
 
+function parar(){
+    var botaoInicial = document.querySelector(".botoes-inicio");
+    botaoInicial.hidden = false;
+    var canvas = document.querySelector("canvas")
+    canvas.hidden =true;
+    var botaoJogo = document.querySelector(".botoes-jogo")
+    botaoJogo.hidden=true;
+
+}

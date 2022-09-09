@@ -21,21 +21,22 @@
         <img src="imgs/Vector (2).png" alt="logo da alura">
     </header>
     <main>
-        <div class="botoes-inicio" >
+        <div class="botoes-inicio" hidden >
             <button class="comecar" onclick="comecar()" > Começar</button>
             <button class="novapalavra" onclick="telaaddpalavra()">Nova palavra</button>
             
         </div>
 
         <section class="forca" >
-            <canvas hidden></canvas>
+            <canvas width="800" height="400" > </canvas>
+           
             <script src="script.js"></script>
 
             
-            <div class="botoes-jogo" hidden >
+            <div class="botoes-jogo"  >
 
                 <button class="desistir" onclick="parar()">Desistir</button>
-                <button class="novojogo">Novo jogo</button>
+                <button class="novojogo" onclick="restart()">Novo jogo</button>
 
             </div>
         </section>

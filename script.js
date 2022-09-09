@@ -123,7 +123,7 @@ function desenhaLetras(letras){
     }
     if(vidaVitoria == letras.length){
 
-    restart(alert("vc venceu"))
+    restart(alert(`a palavra era ${palavraConfere}, vc venceu`))
     }
     
     
@@ -142,6 +142,8 @@ sorteia();
 }
 
 function restart(){
+    letrasjausadas=[];
+
     pincel.clearRect(0, 0, quadro.width, quadro.height);
     vida = 0;
     vidaVitoria=0;
@@ -167,12 +169,26 @@ function addpalavra(palavra){
 
 
 
+var letrasjausadas=[];
 document.addEventListener('keydown', (event) => {
 
-
+    
     var palpite = event.key;
+    var dentro = false;
+    var i = 0;
+    
 
-    tentativa(palpite,palavraConfere)
+    while(i< letrasjausadas.length){
+    if(palpite == letrasjausadas[i]){
+        dentro=true;
+        alert(`vc já chutou ${palpite}, tente outra palavra`)
+
+    }
+    i++
+    }
+    if(dentro==false){
+        tentativa(palpite,palavraConfere)
+    }
 
     
   }, false);
@@ -181,7 +197,8 @@ document.addEventListener('keydown', (event) => {
 
 function tentativa(palpite,palavraConfere){
     
-    
+    letrasjausadas.push(palpite)
+
     contador = 0;
     var segredo2 =[];
     

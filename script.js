@@ -277,7 +277,8 @@ function tentativa(palpite,palavraConfere){
 
 function teclado(){
     
-    var palpite  = document.querySelector(".teclado").value
+    var palp=document.querySelector(".teclado")
+    var palpite  = palp.value
     
 
     
@@ -294,9 +295,8 @@ function teclado(){
         tentativa(palpite[palpite.length-1],palavraConfere)
     } 
     console.log(palpite);
-    palpite.value=[""];
-    console.log(palpite)
 
+    return palp.value = ""    
     
     
 }

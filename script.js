@@ -1,4 +1,5 @@
 var palavras = ["arroz", "sapato", "cachorro","calopsita"]
+var chatLigado = true
 
 // tela
 var quadro = document.querySelector("canvas");
@@ -163,6 +164,8 @@ function restart(){
 }
 function desabilitaPc(){
     chatLigado = false;
+    
+    return chatLigado;
 }
 
 
@@ -196,23 +199,25 @@ function salvar(palavra){
 
 
 var letrasjausadas=[];
-var chatLigado = true
-if(chatLigado){
+if(chatLigado == true){
 document.addEventListener('keydown', (event) => {
+    console.log(chatLigado)
     var palpite = event.key;
     var dentro = false;
     var i = 0;
     while(i< letrasjausadas.length){
-    if(palpite == letrasjausadas[i] && desligaChat){
+    if(palpite == letrasjausadas[i] && desligaChat && chatLigado){
         dentro=true;
         alert(`vc já chutou ${palpite}, tente outra palavra`)
     }
     i++
     }
-    if(dentro==false && desligaChat){
+    if(dentro==false && desligaChat && chatLigado){
         tentativa(palpite,palavraConfere)
     } 
   }, false);
+}else{
+    console.log("o chat esta desligado")
 }
   vida = 0;
   vidaVitoria= 0;
@@ -271,10 +276,13 @@ function tentativa(palpite,palavraConfere){
 }
 
 function teclado(){
-    var teclador = document.querySelector(".teclado")
+    var teclador = document.querySelector(".teclado").value
 
-    if(teclador.value.length>=1){
-        teclador.value=""
+    if(teclador.value.length==1){
+        console.log(teclador.value)
+
+    }else{
+        console.log("dois valores")
     }
     
     

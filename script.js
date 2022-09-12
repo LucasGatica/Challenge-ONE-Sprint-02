@@ -8,6 +8,7 @@ var palavraConfere='';
 
 
 
+
 //sorteia palavra
 function sorteia(){
     

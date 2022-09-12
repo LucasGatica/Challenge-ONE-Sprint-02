@@ -162,7 +162,7 @@ function restart(){
 
 }
 function desabilitaPc(){
-    desligaChatchat = false;
+    chatLigado = false;
 }
 
 
@@ -196,8 +196,8 @@ function salvar(palavra){
 
 
 var letrasjausadas=[];
-
-
+var chatLigado = true
+if(chatLigado){
 document.addEventListener('keydown', (event) => {
     var palpite = event.key;
     var dentro = false;
@@ -213,7 +213,7 @@ document.addEventListener('keydown', (event) => {
         tentativa(palpite,palavraConfere)
     } 
   }, false);
-
+}
   vida = 0;
   vidaVitoria= 0;
 

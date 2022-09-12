@@ -265,12 +265,14 @@ function tentativa(palpite,palavraConfere){
 
     
 }
-var teclador = document.querySelector(".teclado").value
 
 function teclado(){
+    var teclador = document.querySelector(".teclado")
+
     if(teclador.value.length>=1){
         teclador.value=""
     }
+    
     
 }
 

@@ -167,7 +167,7 @@ line-height: 100%;
         
     }
     .pe{
-        position: absolute;
+        position: fixed;
         
         margin-bottom: 0%;
 

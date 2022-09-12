@@ -161,6 +161,9 @@ function restart(){
     sorteia();
 
 }
+function desabilitaPc(){
+    desligaChatchat = false;
+}
 
 
 

@@ -40,7 +40,7 @@ header img{
     
     
 }
-.novapalavra,.novojogo{
+.novapalavra,.novojogo,.teclado{
     width: 200px;
     padding: 20px 50px;
     
@@ -124,6 +124,9 @@ line-height: 100%;
     color: black;
     text-decoration: none;
 }
+.teclado{
+    display: none;
+}
 
 @media screen and (max-width:480px) {
     header{
@@ -143,7 +146,7 @@ line-height: 100%;
         width: 80%;
         margin-right: auto;
         margin-left: auto;
-        margin-top: 20%;
+        margin-top: 10%;
         text-align: center;
         margin-bottom: 5%;
         
@@ -158,6 +161,9 @@ line-height: 100%;
     .botoes-inicio{
         margin-top: 70%;
     }
-    
+    .teclado{
+        
+        display: block;
+    }
 
 }

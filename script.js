@@ -124,7 +124,7 @@ function desenhaLetras(letras){
     }
     if(vidaVitoria == letras.length){
 
-    restart(alert(`a palavra era ${palavraConfere}, vc venceu ${vidaVitoria}${letras.length}`))
+    restart(alert(`a palavra era ${palavraConfere}, vc venceu`))
     }
     
     
@@ -263,6 +263,14 @@ function tentativa(palpite,palavraConfere){
     
    
 
+    
+}
+var teclador = document.querySelector(".teclado").value
+
+function teclado(){
+    if(teclador.value.length>=1){
+        teclador.value=""
+    }
     
 }
 

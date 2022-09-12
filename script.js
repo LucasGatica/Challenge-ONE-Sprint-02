@@ -284,14 +284,14 @@ function teclado(){
     var dentro = false;
     var i = 0;
     while(i< letrasjausadas.length){
-    if(palpite[0] == letrasjausadas[i] && desligaChat ){
+    if(palpite[palpite.length-1] == letrasjausadas[i] && desligaChat ){
         dentro=true;
-        alert(`vc já chutou ${palpite}, tente outra palavra`)
+        alert(`vc já chutou ${palpite[palpite.length-1]}, tente outra palavra`)
     }
     i++
     }
     if(dentro==false && desligaChat ){
-        tentativa(palpite[0],palavraConfere)
+        tentativa(palpite[palpite.length-1],palavraConfere)
     } 
     console.log(palpite);
     palpite.value=[""];

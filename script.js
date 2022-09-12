@@ -163,6 +163,7 @@ function restart(){
 
 }
 function desabilitaPc(){
+
     chatLigado = false;
     
     return chatLigado;
@@ -201,7 +202,6 @@ function salvar(palavra){
 var letrasjausadas=[];
 if(chatLigado == true){
 document.addEventListener('keydown', (event) => {
-    console.log(chatLigado)
     var palpite = event.key;
     var dentro = false;
     var i = 0;
@@ -276,13 +276,15 @@ function tentativa(palpite,palavraConfere){
 }
 
 function teclado(){
-    var teclador = document.querySelector(".teclado").value
+    
+    var teclador  = document.querySelector(".teclado").value
 
-    if(teclador.value.length==1){
-        console.log(teclador.value)
+    if(teclador.length==1){
+        tentativa(teclador,palavraConfere)
 
     }else{
-        console.log("dois valores")
+        tentativa(teclador[0],palavraConfere)
+
     }
     
     

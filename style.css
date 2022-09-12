@@ -40,7 +40,7 @@ header img{
     
     
 }
-.novapalavra,.novojogo,.teclado{
+.novapalavra,.novojogo,.teclado,label{
     width: 200px;
     padding: 20px 50px;
     
@@ -124,7 +124,7 @@ line-height: 100%;
     color: black;
     text-decoration: none;
 }
-.teclado{
+.teclado,label,.chutar{
     display: none;
 }
 
@@ -161,9 +161,37 @@ line-height: 100%;
     .botoes-inicio{
         margin-top: 70%;
     }
-    .teclado{
+        label{
         
         display: block;
     }
+    .chutar{
+        
+    padding: 20px 50px;
+    background-color: #0A3871;
+    border: #0A3871 ;
+    color: #FFFFFF;
+    border-radius: 20px;
+    display: block;
+    
+    
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    }
+
+    .teclado,.chutar{
+        padding-right: 15%;
+        padding-left: 15%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        text-align: center;
+        width: 1px;
+        display: inline-block;
+        margin: auto;
+
+    }
+   
 
 }

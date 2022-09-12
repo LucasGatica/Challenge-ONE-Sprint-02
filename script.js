@@ -166,6 +166,8 @@ function restart(){
 
 
 function telaaddpalavra(){
+    desligaChat = false;
+
     var botaoInicial = document.querySelector(".botoes-inicio");
     botaoInicial.hidden = true;
     
@@ -175,9 +177,11 @@ function telaaddpalavra(){
 }
 
 
-function addpalavra(palavra){
+function salvar(palavra){
+    var palavra = document.querySelector('.add').value
     palavras.push(palavra);
     console.log(palavras)
+    comecar();
 
 }
 
@@ -197,7 +201,7 @@ document.addEventListener('keydown', (event) => {
     }
     i++
     }
-    if(dentro==false){
+    if(dentro==false && desligaChat){
         tentativa(palpite,palavraConfere)
     } 
   }, false);

@@ -124,7 +124,7 @@ function desenhaLetras(letras){
     }
     if(vidaVitoria == letras.length){
 
-    restart(alert(`a palavra era ${palavraConfere}, vc venceu`))
+    restart(alert(`a palavra era ${palavraConfere}, vc venceu ${vidaVitoria}${letras.length}`))
     }
     
     
@@ -179,8 +179,12 @@ function telaaddpalavra(){
 
 function salvar(palavra){
     var palavra = document.querySelector('.add').value
+
+    if(palavra.length != 0){
     palavras.push(palavra);
     console.log(palavras)
+    }
+    parar();
     comecar();
 
 }

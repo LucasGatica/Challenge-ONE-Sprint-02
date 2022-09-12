@@ -92,7 +92,7 @@ background: #E5E5E5;
 border: #E5E5E5;
 font-style: normal;
 
-font-weight: 320;
+font-weight: 220;
 font-size: 32px;
 line-height: 100%;
 }
@@ -100,17 +100,8 @@ line-height: 100%;
 
 
 /*footer*/
-.pe{
-    padding: 20px 0;
-    text-align: center;
-    margin-bottom: 0px;
-    position: fixed;
-    bottom: 0px;
-    width: 100%;
-    
-    
-    
-}
+
+
 .pe img{
     width: 20px;
 }
@@ -123,6 +114,11 @@ line-height: 100%;
 .pe a{
     color: black;
     text-decoration: none;
+}
+footer{
+    text-align: center;
+    padding: 40px 0;
+
 }
 .chutar{
         
@@ -166,12 +162,7 @@ line-height: 100%;
         
         
     }
-    .pe{
-        position: fixed;
-        
-        margin-bottom: 0%;
-
-    }
+  
     .botoes-inicio{
         margin-top: 70%;
     }
@@ -192,6 +183,12 @@ line-height: 100%;
         display: inline-block;
         margin: auto;
 
+    }
+    footer{
+        margin-top: 45%;
+        text-align: center;
+        padding: 40px 0;
+    
     }
    
 

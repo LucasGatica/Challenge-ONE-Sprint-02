@@ -222,8 +222,9 @@ document.addEventListener('keydown', (event) => {
   vida = 0;
   vidaVitoria= 0;
 
-function tentativa(palpite,palavraConfere){
+function tentativa(palpitek,palavraConfere){
     
+    var palpite = palpitek.toLowerCase();
     letrasjausadas.push(palpite)
 
     contador = 0;

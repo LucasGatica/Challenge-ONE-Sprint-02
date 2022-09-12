@@ -277,20 +277,26 @@ function tentativa(palpite,palavraConfere){
 
 function teclado(){
     
-    var teclador  = document.querySelector(".teclado").value
-    prompt("teste")
-
-    if(teclador.length==1){
-        tentativa(teclador,palavraConfere)
-        
-
-
-    }else{
-        tentativa(teclador[0],palavraConfere)
+    var palpite  = document.querySelector(".teclado").value
     
 
-
+    
+    var dentro = false;
+    var i = 0;
+    while(i< letrasjausadas.length){
+    if(palpite[0] == letrasjausadas[i] && desligaChat ){
+        dentro=true;
+        alert(`vc já chutou ${palpite}, tente outra palavra`)
     }
+    i++
+    }
+    if(dentro==false && desligaChat ){
+        tentativa(palpite[0],palavraConfere)
+    } 
+    console.log(palpite);
+    palpite.value=[""];
+    console.log(palpite)
+
     
     
 }

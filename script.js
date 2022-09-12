@@ -1,4 +1,4 @@
-var palavras = ["arroz", "sapato", "cachorro","calopsita"]
+var palavras = ["arroz", "sapato", "cachorro","calopsita","azul","verde","papagaio","tigre","livro","cone","sorvete","festa","galinha","peixe","elefante","vela"]
 var chatLigado = true
 
 // tela

@@ -279,6 +279,8 @@ function teclado(){
     
     var teclador  = document.querySelector(".teclado").value
 
+    alert(teclador)
+
     if(teclador.length==1){
         tentativa(teclador,palavraConfere)
 
